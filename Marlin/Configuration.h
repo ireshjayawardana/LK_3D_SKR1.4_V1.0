@@ -705,7 +705,7 @@
 #define DELTA_DIAGONAL_ROD 280.0        // (mm)
 
 // Distance between bed and nozzle Z home position
-#define DELTA_HEIGHT 650.00             // (mm) Get this value from G33 auto calibrate
+#define DELTA_HEIGHT 614.00             // (mm) Get this value from G33 auto calibrate
 
 #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
@@ -942,7 +942,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-#define S_CURVE_ACCELERATION
+//#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -962,9 +962,11 @@
 
 // Force the use of the probe for Z-axis homing
 //#define USE_PROBE_FOR_Z_HOMING
+//#define Z_MIN_PIN P0_10
+//#define Z_MIN_PROBE_PIN Z_MIN_PIN
 
 /**
- * Z_MIN_PROBE_PIN
+ * 
  *
  * Define this pin if the probe is not connected to Z_MIN_PIN.
  * If not defined the default pin for the selected MOTHERBOARD
@@ -1103,7 +1105,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1149,7 +1151,7 @@
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -15 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -5 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
@@ -1547,7 +1549,7 @@
  *     XY_SKEW_FACTOR        XZ_SKEW_FACTOR        YZ_SKEW_FACTOR
  */
 //
-#define SKEW_CORRECTION  //changed
+//#define SKEW_CORRECTION  //changed
 
 #if ENABLED(SKEW_CORRECTION)
   // Input all length measurements here:
